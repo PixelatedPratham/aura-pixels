@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aura Pixels | Virtual Pixel Simulation</title>
+  <script type="module" crossorigin src="./assets/index-CI8BVqW8.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-B_zYdKDl.css">
+</head>
+
+<body>
+  <div id="app">
+    <video id="input-video" playsinline></video>
+    <canvas id="output-canvas"></canvas>
+
+    <div class="ui-overlay" id="ui-panel">
+      <header>
+        <h1>Aura Pixels</h1>
+        <div class="status-bar">
+          <div id="status-dot" class="status-dot"></div>
+          <span id="status-text">Detecting Camera...</span>
+        </div>
+      </header>
+
+      <div class="control-group">
+        <label for="simulation-mode">Simulation Type</label>
+        <select id="simulation-mode">
+          <option value="pixels">Aura Pixels (High Density)</option>
+          <option value="objects">Virtual Objects (Realistic Physics)</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label for="mode-select">Interaction Mode</label>
+        <select id="mode-select">
+          <option value="gravity">Gravity (Attract)</option>
+          <option value="vortex">Vortex (Spin)</option>
+          <option value="repel">Repel (Push)</option>
+          <option value="grab">Grab & Throw</option>
+          <option value="stark">Stark HUD (Holographic)</option>
+          <option value="blackhole">Black Hole (Consume)</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label for="pixel-count">Pixel Density: <span id="count-val">5000</span></label>
+        <input type="range" id="pixel-count" min="1000" max="15000" step="500" value="5000">
+      </div>
+
+      <div class="control-group">
+        <label>Interaction Sensitivity</label>
+        <input type="range" id="sensitivity" min="0.1" max="2" step="0.1" value="1">
+      </div>
+
+      <div class="control-group">
+        <label>Trail Intensity</label>
+        <input type="range" id="trail-intensity" min="0.01" max="0.5" step="0.01" value="0.2">
+      </div>
+
+      <div class="tip">
+        <b>Tip:</b> Raise your hand to start. Pinch with thumb and index finger to "Grab" objects in Grab & Throw mode.
+      </div>
+
+      <div class="control-group">
+        <label>Diagnostics</label>
+        <div id="logs"
+          style="font-size: 0.7rem; color: #888; background: #000; padding: 8px; border-radius: 4px; max-height: 80px; overflow-y: auto;">
+          Initializing...
+        </div>
+      </div>
+
+      <button id="toggle-fullscreen">Toggle Fullscreen</button>
+      <button id="reset-pixels">Reset Simulation</button>
+    </div>
+
+    <div class="preview-panel" id="preview-panel">
+      <div class="preview-title">Webcam Preview</div>
+      <canvas id="preview-canvas"></canvas>
+    </div>
+  </div>
+</body>
+
+</html>
